@@ -2,5 +2,20 @@
   "name": "node-kinesis",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "AWS_ACCESS_KEY_ID=AKIAIKC7CY3R4KX4ITZQ AWS_SECRET_ACCESS_KEY=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 launch-kinesis-cluster --consumer ./consumer.js --table cor-kinesis-saas1-prd-stu-cm-monsters --stream cor-kinesis-saas1-prd-stu-cm-monsters --local-dynamo true --aws.region us-west-2 --start-at latest",
+    "start:local": "AWS_ACCESS_KEY_ID=x AWS_SECRET_ACCESS_KEY=x launch-kinesis-cluster --consumer ./consumer.js --table kclnodejssample --stream kclnodejssample --local-dynamo true --kinesis-endpoint http://localhost:4567/ --aws.region us-west-2"
+  },
+  "dependencies": {
+    "eslint": "^4.11.0",
+    "kinesis-client-library": "^0.3.6"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
 }
